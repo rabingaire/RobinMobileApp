@@ -1,6 +1,7 @@
 //import imp files
 import React from 'react';
-import {Text} from 'react-native'
+import { Text } from 'react-native';
+import Card from './Card';
 
 
 //components
@@ -8,7 +9,9 @@ import {Text} from 'react-native'
 export default class MovieDetail extends React.Component {
   render() {
     return (
-      <Text>{this.props.movie.Title}</Text>
+      <Card>
+        <Text>{this.props.movie.Title}</Text>
+      </Card>
     );
   }
 }
