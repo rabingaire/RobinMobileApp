@@ -7,23 +7,20 @@ import axios from 'axios';
 
 export default class FilmList extends React.Component {
 
-  constructor() {
-    super();
-    state = { movies: [] };
-  }
+
+  state = { movies: [] };
 
   componentWillMount() {
     axios.get('http://www.omdbapi.com/?s=Batman').then(
-      response => this.setState({movies: response.data.Search})
+      response => this.setState({ movies: response.data.Search})
     );
   }
 
   renderMovies() {
-    return this.state.movies.map( (movie) => {<Text>{movie.Title}</Text>});
+    return this.state.movies.map(movie => <Text>{movie.Title}</Text>);
   }
 
   render() {
-    console.log(this.state);
     return (
       <View>
         {this.renderMovies()}
