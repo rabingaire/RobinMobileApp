@@ -19,7 +19,7 @@ export default class Card extends React.Component {
 const CardStyles = StyleSheet.create({
   containerStyle : {
     borderWidth: 1,
-    borderColor: '#6E7783',
+    borderColor: '#8EC0E4',
     borderRadius: 2,
     padding: 10,
     margin: 10

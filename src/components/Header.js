@@ -24,7 +24,7 @@ const HeaderStyles = StyleSheet.create({
   viewStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#333C4A',
+    backgroundColor: '#6AAFE6',
     padding: 20,
     height: 50
   }
