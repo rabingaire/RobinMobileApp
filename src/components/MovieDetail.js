@@ -21,9 +21,9 @@ export default class MovieDetail extends React.Component {
               <Text style={movieTypeTextStyle}>{this.props.movie.Type}</Text>
             </View>
           </View>
-          <View style={centerImageStyle}>
-            <Image style={imageStyle} source={{uri: this.props.movie.Poster}} />
-          </View>
+        </CardItem>
+        <CardItem>
+          <Image style={imageStyle} source={{uri: this.props.movie.Poster}} />
         </CardItem>
       </Card>
     );
@@ -35,8 +35,9 @@ const MovieDetailStyles = StyleSheet.create({
     fontWeight: 'bold'
   },
   imageStyle: {
-    height: 320,
-    width: 320,
+    height: 300,
+    flex: 0,
+    width: null,
     borderRadius: 5,
     marginTop: 5
   },
