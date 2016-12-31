@@ -18,11 +18,15 @@ export default class FilmList extends React.Component {
     );
   }
 
+  renderMovies() {
+    return this.state.movies.map( (movie) => {<Text>{movie.Title}</Text>});
+  }
+
   render() {
     console.log(this.state);
     return (
       <View>
-        <Text>Data</Text>
+        {this.renderMovies()}
       </View>
     );
   }
