@@ -2,7 +2,7 @@
 import React from 'react';
 import { AppRegistry, Text, View } from 'react-native';
 import Header from './src/components/Header';
-import FilmList from './src/components/FilmList';
+import MovieList from './src/components/MovieList';
 
 //Component
 export default class MyApp extends React.Component {
@@ -10,7 +10,7 @@ export default class MyApp extends React.Component {
     return (
       <View>
         <Header headerText={'Robin'} />
-        <FilmList />
+        <MovieList />
       </View>
     )
   }

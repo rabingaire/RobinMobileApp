@@ -1,11 +1,12 @@
 //import require file
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import MovieDetail from './MovieDetail';
 import axios from 'axios';
 
 //Component
 
-export default class FilmList extends React.Component {
+export default class MovieList extends React.Component {
 
 
   state = { movies: [] };
@@ -17,7 +18,9 @@ export default class FilmList extends React.Component {
   }
 
   renderMovies() {
-    return this.state.movies.map(movie => <Text key={movie.imdbID}>{movie.Title}</Text>);
+    return this.state.movies.map(movie =>
+      <MovieDetail key={movie.imdbID} movie={movie} />
+    );
   }
 
   render() {
