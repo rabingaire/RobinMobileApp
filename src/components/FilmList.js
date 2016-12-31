@@ -17,10 +17,11 @@ export default class FilmList extends React.Component {
   }
 
   renderMovies() {
-    return this.state.movies.map(movie => <Text>{movie.Title}</Text>);
+    return this.state.movies.map(movie => <Text key={movie.imdbID}>{movie.Title}</Text>);
   }
 
   render() {
+    console.log(this.state);
     return (
       <View>
         {this.renderMovies()}
