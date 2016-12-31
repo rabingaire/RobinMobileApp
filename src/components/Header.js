@@ -7,16 +7,16 @@ import { Text, StyleSheet, View } from 'react-native';
 
 export default class Header extends React.Component {
   render() {
-    const {texts, viewStyle} = styles;
+    const {texts, viewStyle} = HeaderStyles;
     return (
       <View style={viewStyle}>
         <Text style={texts}>{this.props.headerText}</Text>
       </View>
     );
   }
-};
+}
 
-const styles = StyleSheet.create({
+const HeaderStyles = StyleSheet.create({
   texts: {
     fontSize: 20,
     color: '#FFFFFF'
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#333C4A',
     padding: 20,
-    height:50
+    height: 50
   }
 });
