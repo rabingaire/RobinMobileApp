@@ -1,6 +1,6 @@
 //import require file
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import MovieDetail from './MovieDetail';
 import axios from 'axios';
 
@@ -26,9 +26,9 @@ export default class MovieList extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <View>
+      <ScrollView>
         {this.renderMovies()}
-      </View>
+      </ScrollView>
     );
   }
 }
