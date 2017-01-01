@@ -1,6 +1,6 @@
 //import require file
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, TextInput, StyleSheet } from 'react-native';
 import MovieDetail from './MovieDetail';
 import axios from 'axios';
 
@@ -11,9 +11,9 @@ export default class MovieList extends React.Component {
 
   state = { movies: [] };
 
-  componentWillMount() {
-    axios.get('http://www.omdbapi.com/?s=Batman').then(
-      response => this.setState({ movies: response.data.Search})
+  apiCall(event) {
+    axios.get(`http://www.omdbapi.com/?s=${event.nativeEvent.text}`).then(
+      response => this.setState({movies: response.data.Search})
     );
   }
 
@@ -25,10 +25,22 @@ export default class MovieList extends React.Component {
 
   render() {
     console.log(this.state);
+    const {TextInputStyle} = MovieListStyles;
     return (
       <ScrollView>
+        <TextInput
+          style={TextInputStyle}
+          onSubmitEditing={(event) => this.apiCall(event)}
+          returnKeyType='search'
+          placeholder="Search movie/series..."/>
         {this.renderMovies()}
       </ScrollView>
     );
   }
 }
+
+const MovieListStyles = StyleSheet.create({
+  TextInputStyle: {
+    margin:10
+  }
+});
